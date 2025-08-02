@@ -112,6 +112,7 @@ const calculatePositionProfitability = async (position) => {
 };
 
 // 🔁 Obtener posiciones abiertas
+// 🔁 Obtener posiciones abiertas
 export const getOpenPositions = async (req, res) => {
   try {
     const targetUrl = `${BASE_URL}/api/positions`;
@@ -124,13 +125,20 @@ export const getOpenPositions = async (req, res) => {
     const positions = response.data?.results || [];
 
     const enriched = await Promise.all(
-      positions.map(async (p) => ({
-        ...p,
-        ...(await calculatePositionProfitability(p)),
-      }))
+      positions.map(async (p) => {
+        const enrichedData = await calculatePositionProfitability(p);
+
+        // 🔍 Excluir campos no deseados
+        const { SavedPrice, ClosingDate, ...filteredPosition } = p;
+
+        return {
+          ...filteredPosition,
+          ...enrichedData,
+        };
+      })
     );
 
-    console.log("✅ Posiciones abiertas enriquecidas");
+    console.log("✅ Posiciones abiertas enriquecidas sin campos excluidos");
     res.json({ count: enriched.length, results: enriched });
   } catch (err) {
     console.error("❌ Error en getOpenPositions:", err.message);

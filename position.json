@@ -130,9 +130,9 @@
       "State": false,
       "SavedPrice": "2.38",
       "ClosingDate": "2025-02-28",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 2.84,
+      "rentabilidadTotalActiva": -69.25,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 198,
@@ -244,9 +244,9 @@
       "State": false,
       "SavedPrice": "13.67",
       "ClosingDate": "2025-03-12",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 12.2,
+      "rentabilidadTotalActiva": 34.06,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 205,
@@ -301,9 +301,9 @@
       "State": false,
       "SavedPrice": "1932.00",
       "ClosingDate": "2025-03-04",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 1815,
+      "rentabilidadTotalActiva": 11.85,
+      "porcentajeAsignacionActiva": 39
     },
     {
       "id": 208,
@@ -396,9 +396,9 @@
       "State": false,
       "SavedPrice": "114.36",
       "ClosingDate": "2025-03-21",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 114.56,
+      "rentabilidadTotalActiva": -26.24,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 214,
@@ -472,9 +472,9 @@
       "State": false,
       "SavedPrice": "107.61",
       "ClosingDate": "2025-01-29",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 107.4,
+      "rentabilidadTotalActiva": 2.09,
+      "porcentajeAsignacionActiva": 120
     },
     {
       "id": 219,
@@ -548,9 +548,9 @@
       "State": false,
       "SavedPrice": "47.50",
       "ClosingDate": "2025-03-03",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 49,
+      "rentabilidadTotalActiva": -6.88,
+      "porcentajeAsignacionActiva": 75
     },
     {
       "id": 298,
@@ -643,9 +643,9 @@
       "State": false,
       "SavedPrice": "447.62",
       "ClosingDate": "2025-03-21",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 440.45,
+      "rentabilidadTotalActiva": -4.41,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 331,
@@ -776,9 +776,9 @@
       "State": false,
       "SavedPrice": "9.22",
       "ClosingDate": "2025-04-04",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 9.92,
+      "rentabilidadTotalActiva": 7.36,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 531,
@@ -833,9 +833,9 @@
       "State": false,
       "SavedPrice": "21.54",
       "ClosingDate": "2025-04-03",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 22.65,
+      "rentabilidadTotalActiva": -6.49,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 562,
@@ -928,9 +928,9 @@
       "State": false,
       "SavedPrice": "73.87",
       "ClosingDate": "2025-04-03",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 73.79,
+      "rentabilidadTotalActiva": 5.1,
+      "porcentajeAsignacionActiva": 65
     },
     {
       "id": 630,
@@ -1023,9 +1023,9 @@
       "State": false,
       "SavedPrice": "52.43",
       "ClosingDate": "2025-04-08",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 57.61,
+      "rentabilidadTotalActiva": 29.53,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 762,
@@ -1080,9 +1080,9 @@
       "State": false,
       "SavedPrice": "19.83",
       "ClosingDate": "2025-06-20",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 13.7,
+      "rentabilidadTotalActiva": 86.15,
+      "porcentajeAsignacionActiva": 64
     },
     {
       "id": 892,
@@ -1099,9 +1099,9 @@
       "State": false,
       "SavedPrice": "65.99",
       "ClosingDate": "2025-05-01",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 68.5,
+      "rentabilidadTotalActiva": 6.44,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 893,
@@ -1118,9 +1118,9 @@
       "State": false,
       "SavedPrice": "15.92",
       "ClosingDate": "2025-05-30",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 15.97,
+      "rentabilidadTotalActiva": 15.28,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 925,
@@ -1156,9 +1156,9 @@
       "State": false,
       "SavedPrice": "126.29",
       "ClosingDate": "2025-07-30",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 120.24,
+      "rentabilidadTotalActiva": 9.74,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 958,
@@ -1194,9 +1194,9 @@
       "State": false,
       "SavedPrice": "25.88",
       "ClosingDate": "2025-05-06",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 27.88,
+      "rentabilidadTotalActiva": -0.99,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 960,
@@ -1232,9 +1232,9 @@
       "State": false,
       "SavedPrice": "235.55",
       "ClosingDate": "2025-07-31",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 190.21,
+      "rentabilidadTotalActiva": 12.66,
+      "porcentajeAsignacionActiva": 52.5
     },
     {
       "id": 1058,
@@ -1251,9 +1251,9 @@
       "State": false,
       "SavedPrice": "89.40",
       "ClosingDate": "2025-05-19",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 86.32,
+      "rentabilidadTotalActiva": 1.74,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1059,
@@ -1270,9 +1270,9 @@
       "State": false,
       "SavedPrice": "515.31",
       "ClosingDate": "2025-05-30",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 588.2,
+      "rentabilidadTotalActiva": -4.99,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1090,
@@ -1289,9 +1289,9 @@
       "State": false,
       "SavedPrice": "92.71",
       "ClosingDate": "2025-05-21",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 98.15,
+      "rentabilidadTotalActiva": 1.65,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1123,
@@ -1327,9 +1327,9 @@
       "State": false,
       "SavedPrice": "165.50",
       "ClosingDate": "2025-06-23",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 171.6,
+      "rentabilidadTotalActiva": 10.69,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1190,
@@ -1365,9 +1365,9 @@
       "State": false,
       "SavedPrice": "461.75",
       "ClosingDate": "2025-06-11",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 479.69,
+      "rentabilidadTotalActiva": -12.23,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1222,
@@ -1403,9 +1403,9 @@
       "State": false,
       "SavedPrice": "292.95",
       "ClosingDate": "2025-07-15",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 308.44,
+      "rentabilidadTotalActiva": -22.91,
+      "porcentajeAsignacionActiva": 216
     },
     {
       "id": 1256,
@@ -1460,9 +1460,9 @@
       "State": false,
       "SavedPrice": "219.59",
       "ClosingDate": "2025-07-24",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 236,
+      "rentabilidadTotalActiva": -18.08,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1388,
@@ -1479,9 +1479,9 @@
       "State": false,
       "SavedPrice": "33.99",
       "ClosingDate": "2025-07-25",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 35.36,
+      "rentabilidadTotalActiva": -8.03,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1389,
@@ -1536,9 +1536,9 @@
       "State": false,
       "SavedPrice": "10.83",
       "ClosingDate": "2025-07-15",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 11.64,
+      "rentabilidadTotalActiva": -14.43,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1487,
@@ -1555,9 +1555,9 @@
       "State": false,
       "SavedPrice": "66.12",
       "ClosingDate": "2025-07-17",
-      "precioPromedio": null,
-      "rentabilidadTotalActiva": null,
-      "porcentajeAsignacionActiva": null
+      "precioPromedio": 70.01,
+      "rentabilidadTotalActiva": -31.17,
+      "porcentajeAsignacionActiva": 100
     },
     {
       "id": 1552,
