@@ -15,7 +15,7 @@
  * Rutas para obtener posiciones abiertas, cerradas y filtradas del portafolio
  * Estas rutas se documentan usando Swagger (OpenAPI 3.0).
  *
- * Versión actual: 1.0
+ * Versión actual: 1.1
  * Fecha última revisión: 2025-08-02
  * -----------------------------------------------------------------------------
  */
@@ -26,6 +26,7 @@ import {
   getClosedPositions,
   getClosedPositionsWithFilter,
 } from "../controllers/positionsController.js";
+import { verifyApiKey } from "../middleware/verifyApiKey.js";
 
 const router = express.Router();
 
@@ -45,8 +46,10 @@ const router = express.Router();
  *     responses:
  *       200:
  *         description: Lista de posiciones abiertas enriquecidas
+ *       403:
+ *         description: Acceso denegado - API Key inválida
  */
-router.get("/open", getOpenPositions);
+router.get("/open", verifyApiKey, getOpenPositions);
 
 /**
  * @swagger
@@ -57,8 +60,10 @@ router.get("/open", getOpenPositions);
  *     responses:
  *       200:
  *         description: Lista de posiciones cerradas enriquecidas
+ *       403:
+ *         description: Acceso denegado - API Key inválida
  */
-router.get("/closed", getClosedPositions);
+router.get("/closed", verifyApiKey, getClosedPositions);
 
 /**
  * @swagger
@@ -76,7 +81,9 @@ router.get("/closed", getClosedPositions);
  *     responses:
  *       200:
  *         description: Lista de posiciones cerradas filtradas por antigüedad
+ *       403:
+ *         description: Acceso denegado - API Key inválida
  */
-router.get("/closed-with-filter", getClosedPositionsWithFilter);
+router.get("/closed-with-filter", verifyApiKey, getClosedPositionsWithFilter);
 
 export default router;

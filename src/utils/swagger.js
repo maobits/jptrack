@@ -1,4 +1,3 @@
-// src/utils/swagger.js
 import swaggerJsdoc from "swagger-jsdoc";
 
 const swaggerDefinition = {
@@ -19,16 +18,23 @@ const swaggerDefinition = {
       url: "https://ttrading.shop:4000/api",
       description: "Servidor en producción",
     },
-    {
-      url: "http://localhost:4000/api",
-      description: "Servidor local",
-    },
+    { url: "http://localhost:4000/api", description: "Servidor local" },
   ],
+  components: {
+    securitySchemes: {
+      ApiKeyAuth: {
+        type: "apiKey",
+        in: "header",
+        name: "x-api-key", // Aquí se define claramente el nombre del header
+      },
+    },
+  },
+  security: [{ ApiKeyAuth: [] }], // Aplica globalmente a todas las rutas documentadas
 };
 
 const options = {
   swaggerDefinition,
-  apis: ["src/routes/**/*.js"], // ruta absoluta relativa al root del proyecto
+  apis: ["src/routes/**/*.js"],
 };
 
 export const swaggerSpec = swaggerJsdoc(options);
