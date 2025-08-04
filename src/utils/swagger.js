@@ -15,8 +15,8 @@ const swaggerDefinition = {
   },
   servers: [
     {
-      url: "http://localhost:4000/api",
-      description: "Servidor local",
+      url: "https://ttrading.shop:4000/api",
+      description: "Servidor de producción",
     },
   ],
   components: {

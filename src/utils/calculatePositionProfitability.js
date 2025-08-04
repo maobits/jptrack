@@ -62,7 +62,7 @@ export const calculatePositionProfitability = async (position) => {
     console.log("📤 Enviando a calculadora:", requestData);
 
     const response = await fetch(
-      "http://localhost:3600/procesar-transacciones", // <-- ACTUALIZADO
+      "https://ttrading.shop:3600/procesar-transacciones", // <-- ACTUALIZADO
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },

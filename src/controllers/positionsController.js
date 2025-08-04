@@ -30,7 +30,8 @@ import fetch from "node-fetch";
 const BASE_URL = process.env.BITACORA_API_URL;
 const API_KEY = process.env.BITACORA_API_KEY;
 const CALCULATOR_URL =
-  process.env.CALCULATOR_URL || "http://localhost:3600/procesar-transacciones";
+  process.env.CALCULATOR_URL ||
+  "https://ttrading.shop:3600/procesar-transacciones";
 
 console.log("🔍 Cargando variables de entorno...");
 console.log("📦 BITACORA_API_URL:", BASE_URL);
