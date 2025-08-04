@@ -16,26 +16,10 @@ export const calculatePositionProfitability = async (position) => {
     const transacciones = priceEntries
       .slice(1)
       .map((entry) => {
-        const allocation = allocations.find(
-          (alloc) => parseInt(alloc.id) === parseInt(entry.id)
-        );
+        const allocation = allocations.find((alloc) => alloc.id === entry.id);
+        if (!allocation) return null;
 
-        if (!allocation) {
-          console.warn(
-            `⚠️ Sin asignación encontrada para entry.id=${entry.id} en ${position.Symbol}`
-          );
-          return null;
-        }
-
-        const porcentaje = parseFloat(allocation.activeAllocation || "0") / 100;
-
-        if (isNaN(porcentaje) || porcentaje <= 0) {
-          console.warn(
-            `⚠️ Porcentaje inválido (${porcentaje}) para ${position.Symbol}`
-          );
-          return null;
-        }
-
+        const porcentaje = parseFloat(allocation.activeAllocation) / 100;
         const tipo =
           entry.type === "add"
             ? "adicion"

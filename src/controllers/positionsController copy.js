@@ -45,7 +45,6 @@ if (!BASE_URL || !API_KEY) {
 }
 
 // 👉 Helper para enriquecer una posición con valores calculados
-
 const calculatePositionProfitability = async (position) => {
   try {
     const priceEntries = JSON.parse(position.PriceEntry);
@@ -82,6 +81,8 @@ const calculatePositionProfitability = async (position) => {
       closingDate,
     };
 
+    console.log("📤 Enviando a calculadora:", requestData);
+
     const response = await fetch(CALCULATOR_URL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -91,45 +92,18 @@ const calculatePositionProfitability = async (position) => {
     if (!response.ok) throw new Error(`Error ${response.status}`);
 
     const result = await response.json();
-
-    // Fallback si estadoActual no viene
-    let estado = result.estadoActual || {};
-    if (!estado || Object.keys(estado).length === 0) {
-      const last = result.historial?.[result.historial.length - 1] || {};
-      estado = {
-        precioPromedio: last.nuevoPrecioPromedio,
-        rentabilidadTotal: last.rentabilidadTotal || last.rentabilidadCierre,
-        porcentajeAsignacionActiva: last.porcentajeAsignacionActiva,
-      };
-    }
-
-    const isClosed =
-      position.State === false ||
-      (position.ClosingDate && position.ClosingDate !== "null");
+    const estado = result.estadoActual || {};
 
     return {
-      symbol,
       precioPromedio: parseFloat(estado.precioPromedio) || null,
-      ...(isClosed
-        ? {
-            rentabilidadTotalCerrada:
-              parseFloat(estado.rentabilidadTotal) || null,
-            porcentajeAsignacionActiva: 0,
-          }
-        : {
-            rentabilidadTotalActiva:
-              parseFloat(estado.rentabilidadTotal) || null,
-            porcentajeAsignacionActiva:
-              parseFloat(estado.porcentajeAsignacionActiva) || 0,
-          }),
+      rentabilidadTotalActiva: parseFloat(estado.rentabilidadTotal) || null,
+      porcentajeAsignacionActiva: parseFloat(0) || 0,
     };
   } catch (err) {
     console.error(`❌ Error al calcular para ${position.Symbol}:`, err.message);
     return {
-      symbol: position.Symbol,
       precioPromedio: null,
       rentabilidadTotalActiva: null,
-      rentabilidadTotalCerrada: null,
       porcentajeAsignacionActiva: null,
     };
   }
