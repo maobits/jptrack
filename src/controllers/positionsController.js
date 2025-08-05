@@ -30,8 +30,8 @@ import fetch from "node-fetch";
 const BASE_URL = process.env.BITACORA_API_URL;
 const API_KEY = process.env.BITACORA_API_KEY;
 const CALCULATOR_URL =
-  process.env.CALCULATOR_URL ||
-  "https://ttrading.shop:3600/procesar-transacciones";
+  process.env.CALCULATOR_URL || "http://localhost:3600/procesar-transacciones";
+//"https://ttrading.shop:3600/procesar-transacciones";
 
 console.log("🔍 Cargando variables de entorno...");
 console.log("📦 BITACORA_API_URL:", BASE_URL);
@@ -99,44 +99,32 @@ const calculatePositionProfitability = async (position) => {
       const last = result.historial?.[result.historial.length - 1] || {};
       estado = {
         precioPromedio: last.nuevoPrecioPromedio,
-        rentabilidadTotal: last.rentabilidadTotal || last.rentabilidadCierre,
-        porcentajeAsignacionActiva: last.porcentajeAsignacionActiva,
       };
     }
 
-    const isClosed =
-      position.State === false ||
-      (position.ClosingDate && position.ClosingDate !== "null");
+    // ❌ Eliminar rentabilidadTotalActiva si la posición está cerrada
+    if (position.State === false && result.estadoActual) {
+      delete result.estadoActual.rentabilidadTotalActiva;
+    }
 
     return {
       symbol,
-      precioPromedio: parseFloat(estado.precioPromedio) || null,
-      ...(isClosed
-        ? {
-            rentabilidadTotalCerrada:
-              parseFloat(estado.rentabilidadTotal) || null,
-            porcentajeAsignacionActiva: 0,
-          }
-        : {
-            rentabilidadTotalActiva:
-              parseFloat(estado.rentabilidadTotal) || null,
-            porcentajeAsignacionActiva:
-              parseFloat(estado.porcentajeAsignacionActiva) || 0,
-          }),
+      precioPromedio:
+        estado.precioPromedio !== undefined
+          ? parseFloat(estado.precioPromedio)
+          : null,
+      detalleCompleto: result,
     };
   } catch (err) {
     console.error(`❌ Error al calcular para ${position.Symbol}:`, err.message);
     return {
       symbol: position.Symbol,
       precioPromedio: null,
-      rentabilidadTotalActiva: null,
-      rentabilidadTotalCerrada: null,
-      porcentajeAsignacionActiva: null,
+      detalleCompleto: {},
     };
   }
 };
 
-// 🔁 Obtener posiciones abiertas
 export const getOpenPositions = async (req, res) => {
   try {
     const targetUrl = `${BASE_URL}/api/positions`;

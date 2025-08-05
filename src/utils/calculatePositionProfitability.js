@@ -62,7 +62,8 @@ export const calculatePositionProfitability = async (position) => {
     console.log("📤 Enviando a calculadora:", requestData);
 
     const response = await fetch(
-      "https://ttrading.shop:3600/procesar-transacciones", // <-- ACTUALIZADO
+      "http://localhost:3600/procesar-transacciones",
+      //"https://ttrading.shop:3600/procesar-transacciones", // <-- ACTUALIZADO
       {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -76,6 +77,12 @@ export const calculatePositionProfitability = async (position) => {
 
     const result = await response.json();
     const estado = result.estadoActual || {};
+    const historial = result.historial || [];
+
+    // Buscar rentabilidadTotal del último cierre_total
+    const ultimaCierre = historial
+      .filter((h) => h.tipo === "cierre_total")
+      .pop();
 
     return {
       symbol,
@@ -83,6 +90,9 @@ export const calculatePositionProfitability = async (position) => {
       rentabilidadTotalActiva: parseFloat(estado.rentabilidadTotal) || null,
       porcentajeAsignacionActiva:
         parseFloat(estado.porcentajeAsignacionActiva) || null,
+      rentabilidadTotalCerrada: ultimaCierre
+        ? parseFloat(ultimaCierre.rentabilidadTotal)
+        : null,
     };
   } catch (err) {
     console.error(
@@ -94,6 +104,7 @@ export const calculatePositionProfitability = async (position) => {
       precioPromedio: null,
       rentabilidadTotalActiva: null,
       porcentajeAsignacionActiva: null,
+      rentabilidadTotalCerrada: null,
       error: err.message,
     };
   }
