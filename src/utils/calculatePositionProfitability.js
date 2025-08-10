@@ -1,5 +1,7 @@
-// src/utils/calculatePositionProfitability.js
 import fetch from "node-fetch";
+import dotenv from "dotenv";
+
+dotenv.config(); // para cargar las variables del .env
 
 export const calculatePositionProfitability = async (position) => {
   try {
@@ -61,15 +63,16 @@ export const calculatePositionProfitability = async (position) => {
 
     console.log("📤 Enviando a calculadora:", requestData);
 
-    const response = await fetch(
-      "http://localhost:3600/procesar-transacciones",
-      //"https://ttrading.shop:3600/procesar-transacciones", // <-- ACTUALIZADO
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(requestData),
-      }
-    );
+    // Usar URL de entorno o localhost como fallback
+    const url =
+      process.env.CALCULATOR_URL ||
+      "http://localhost:3600/procesar-transacciones";
+
+    const response = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(requestData),
+    });
 
     if (!response.ok) {
       throw new Error(`Error ${response.status}`);
@@ -79,7 +82,6 @@ export const calculatePositionProfitability = async (position) => {
     const estado = result.estadoActual || {};
     const historial = result.historial || [];
 
-    // Buscar rentabilidadTotal del último cierre_total
     const ultimaCierre = historial
       .filter((h) => h.tipo === "cierre_total")
       .pop();

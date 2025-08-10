@@ -25,7 +25,7 @@ dotenv.config();
 const BASE_URL = process.env.BITACORA_API_URL;
 const API_KEY = process.env.BITACORA_API_KEY;
 const CALCULATOR_URL =
-  process.env.PORTFOLIO_CALCULATOR_URL ||
+  process.env.CALCULATOR_PORTFOLIO_URL ||
   "http://localhost:3600/portfolio-profitability";
 //"https://ttrading.shop:3600/portfolio-profitability";
 
